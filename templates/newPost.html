@@ -15,7 +15,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid justify-content-lg-evenly">
-        <a class="navbar-brand" href="#">Anime Image Board</a>
+        <a class="navbar-brand" href="/">Anime Image Board</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,21 +42,25 @@
   </nav>
 
   <br>
-
-  <div class="card text-center mx-auto p-4" style="width: 25rem;">
-    <!-- TODO: Change source once API is set-up. -->
-    <!-- TODO: Make this whole section a form. -->
-    <!-- From Emma: Would it be called a post or a comment? I thought it was all comments on different image pages, please
-      correct me if I'm wrong, just slightly confused.-->
-    <img class="card-img-top" src="/static/images/computer.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Creating new post</h5>
-      <p class="card-text">Enter a description: 
-        <textarea type="text" rows="7" cols="40"></textarea>
-      </p>
-      <a href="#" class="btn btn-primary">Create Post</a>
+  <form method="POST" action="/new/post">
+    <div class="card text-center mx-auto p-4" style="width: 25rem;">
+      <!-- TODO: Change source once API is set-up. -->
+      <!-- TODO: Make this whole section a form. -->
+      <!-- From Emma: Would it be called a post or a comment? I thought it was all comments on different image pages, please
+        correct me if I'm wrong, just slightly confused.-->
+      <img class="card-img-top" src="/static/images/computer.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Creating new post</h5>
+        <p class="card-text">Enter a description: 
+          <textarea type="text" name="description" rows="7" cols="40"></textarea>
+        </p>
+        <button class="btn btn-primary">Create Post</button>
+      </div>
     </div>
-  </div>
+  </form>
+
+  {{info}}
+  
         
 
     

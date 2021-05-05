@@ -4,7 +4,7 @@ Flask app engine for Anime Board project.
 
 '''
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from PIL import Image
 import random
@@ -50,9 +50,20 @@ def random():
     #Send images with render_template
     return render_template('random.html')
 
+#New post GET route
 @app.route('/new/post')
-def createPost():
+def create_post():
+    #Get user input and store in database under posts table
     return render_template('newPost.html')
+
+#New post POST route
+#Referenced https://flask.palletsprojects.com/en/1.1.x/quickstart/#accessing-request-data
+@app.route('/new/post', methods=['POST'])
+def create_post_post():
+    description = request.form['description']
+    #Testing if data is sent to form...result ..yes
+    #Get user input and store in database under posts table
+    return render_template('newPost.html', info=description)
 
 #Login route
 @app.route('/login')
