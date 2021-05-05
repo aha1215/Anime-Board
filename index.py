@@ -50,6 +50,10 @@ def random():
     #Send images with render_template
     return render_template('random.html')
 
+@app.route('/new/post')
+def createPost():
+    return render_template('newPost.html')
+
 #Login route
 @app.route('/login')
 def login():
