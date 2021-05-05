@@ -29,7 +29,7 @@ def index():
 
 #Image page route
 @app.route('/img/<img_id>')
-def imgpage():
+def imgpage(img_id):
     #Get all info about img
     #NOTE: change the route depending on how the API works -Emma
     #Get all comments about img
