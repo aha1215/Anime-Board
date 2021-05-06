@@ -18,23 +18,28 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid justify-content-lg-evenly">
-            <a class="navbar-brand" href="/">Anime Image Board</a>
+
+            <a class="navbar-brand" href={{ url_for('index') }}>Anime Image Board</a>
+          
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <!-- TODO: Change active page based on current user page. Probably should make this whole nav section
                 a partial. -->
+            <!-- Scott: If we do it with this "active" tag, even though it's bulkier and not optimized, it's safe,
+            since we'd have to write code to detect the page and determine which page is active. If we have time
+            it's something to do I suppose.-->
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Anime List</a>
+                      <a class="nav-link active" aria-current="page" href={{ url_for('index') }}>Anime List</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Character List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Random Image</a>
+                        <a class="nav-link" href={{ url_for('random') }}>Random Image</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/new/post">Create Post</a>
