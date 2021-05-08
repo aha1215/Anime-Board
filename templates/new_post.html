@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creating Post</title>
-    <!--{{ bootstrap.load_css() }}--> <!-- From Emma: I commented this out for now for better visual preview.
-      Also added the alternate bootstrap import and jquery import. -->
-    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <!-- Jquery import -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -48,9 +45,13 @@
       <!-- TODO: Make this whole section a form. -->
       <!-- From Emma: Would it be called a post or a comment? I thought it was all comments on different image pages, please
         correct me if I'm wrong, just slightly confused.-->
+
+      <!-- To Emma: It was to make a new post, I was thinking for the comments, we can have that on the post's page -->
+
       <img class="card-img-top" src="/static/images/computer.jpg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Creating new post</h5>
+        <input type="text" name="title" placeholder="Enter title"><br><br>
         <p class="card-text">Enter a description: 
           <textarea type="text" name="description" rows="7" cols="40"></textarea>
         </p>
