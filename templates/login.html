@@ -33,7 +33,7 @@
                       <a class="nav-link" href="/new/post">Create Post</a>
                   </li>
                   </ul>
-                  <form class="d-flex">
+                  <form class="d-flex" action={{ url_for('login') }}>
                     <button class="btn btn-primary" type="submit">Log-In</button>
                   </form>
             </div>
@@ -44,6 +44,33 @@
     <br>
 
     <main>
+
+        <div class="card w-50 mx-auto p-4">
+            <h2 class="card-title">Log-In</h2>
+            <hr>
+            <br>
+            <form method="POST" action="/login">
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <label class="form-label">Username:</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" name="username" class="form-control">
+                </div>
+              </div>
+              <br>
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <label class="form-label">Password:</label>
+                </div>
+                <div class="col-auto">
+                  <input type="password" name="password" class="form-control">
+                </div>
+              </div>
+              <br>
+              <button class="btn btn-primary"> Login </button>
+            </form>
+        </div>
 
     </main>
   

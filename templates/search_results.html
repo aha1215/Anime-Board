@@ -31,7 +31,7 @@
                       <a class="nav-link" href="/new/post">Create Post</a>
                   </li>
                   </ul>
-                  <form class="d-flex">
+                  <form class="d-flex"  action={{ url_for('login') }}>
                     <button class="btn btn-primary" type="submit">Log-In</button>
                   </form>
             </div>
@@ -44,9 +44,9 @@
       <div class="container p-3">
         {% for img in images %}
           <div class="d-inline-flex justify-content-start p-4">
-            <a href=#>
+            <a href="{{ url_for('imgpage', img_id=img['mal_id']) }}">
               <img
-              src="{{img}}"
+              src="{{ img['image_url'] }}"
               width="250"
               class="img-fluid rounded"
               alt="anime image"
