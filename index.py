@@ -1,7 +1,17 @@
 '''
+--- Project Details ---
+Course: CST205
+Title: Anime Board
+Abstract: Anime Board site that is powered by Flask and allows users to login and look up different anime images.
+Authors: Andrew Brown, Emma Larson, Scott Coonis, Alfredo Hernandez
+Date: 5/17/2021
+GitHub Repo Link: https://github.com/ahernandez1215/anime_board.git
 
-Flask app engine for Anime Board project.
-
+--- Who Did What ---
+Andrew: Database and Login
+Emma: HTML and Flask set-up, overall project design/vision
+Scott: HTML and Flask functionality, navbar connections
+Alfredo: Create new post page HTML, implemented API usage (search by keyword) and search functionality
 '''
 
 from werkzeug.security import generate_password_hash, check_password_hash
