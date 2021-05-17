@@ -1,4 +1,4 @@
-Anime Image Board
+<h1>Anime Image Board</h1>
 
 Team Members: Andrew Brown, Emma Larson, Scott Coonis, Alfredo Hernandez
 
