@@ -22,9 +22,12 @@
 
             <!-- TODO: Change active page based on current user page. Probably should make this whole nav section
                 a partial. -->
-            <!-- Scott: If we do it with this "active" tag, even though it's bulkier and not optimized, it's safe,
+            <!-- From Scott: If we do it with this "active" tag, even though it's bulkier and not optimized, it's safe,
             since we'd have to write code to detect the page and determine which page is active. If we have time
             it's something to do I suppose.-->
+            <!-- From Emma: Good point. Also, something to do later if we have time - switch login button to logout
+                button. Just requires authentication variable to get sent from the route when rendering and an if-else
+                statement.-->
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -40,7 +43,7 @@
                         <a class="nav-link" href="/new/post">Create Post</a>
                     </li>
                   </ul>
-                  <form class="d-flex">
+                  <form class="d-flex" action={{ url_for('login') }}>
                     <button class="btn btn-primary" type="submit">Log-In</button>
                   </form>
             </div>
@@ -67,14 +70,13 @@
         <div class="card p-4 w-50 mx-auto">
             <h2 class="card-title text-center">Search Images by Keyword</h2>
             <form method="POST" action="/search">
-                <div class="row justify-content-evenly">
+                <div class="row g-2 justify-content-center">
                     <div class="col-auto">
                         <input type="text" name="keywords" class="form-control">
                     </div>
                     <div class="col-auto">
                         <button class="btn btn-outline-primary">Search</button>
                     </div>
-                    
                 </div>
             </form>
         </div>

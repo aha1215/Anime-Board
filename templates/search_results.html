@@ -12,14 +12,14 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid justify-content-lg-evenly">
-            <a class="navbar-brand" href="/">Anime Image Board</a>
+            <a class="navbar-brand" href={{ url_for('index') }}>Anime Image Board</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Anime List</a>
+                      <a class="nav-link active" aria-current="page" href={{ url_for('index') }}>Anime List</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Character List</a>
@@ -31,7 +31,7 @@
                       <a class="nav-link" href="/new/post">Create Post</a>
                   </li>
                   </ul>
-                  <form class="d-flex">
+                  <form class="d-flex"  action={{ url_for('login') }}>
                     <button class="btn btn-primary" type="submit">Log-In</button>
                   </form>
             </div>
@@ -44,9 +44,9 @@
       <div class="container p-3">
         {% for img in images %}
           <div class="d-inline-flex justify-content-start p-4">
-            <a href=#>
+            <a href="{{ url_for('imgpage', img_id=img['mal_id']) }}">
               <img
-              src="{{img}}"
+              src="{{ img['image_url'] }}"
               width="250"
               class="img-fluid rounded"
               alt="anime image"

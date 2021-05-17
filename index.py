@@ -72,8 +72,11 @@ def search():
         
         my_list = []
 
+        '''
         for i in range(len(data)):
             my_list.append(data['results'][i]['image_url']) #List of images matching search_term
+        '''
+        my_list = data['results']
 
         return render_template('search_results.html', images=my_list, keywords=search_term)
     

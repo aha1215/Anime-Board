@@ -4,20 +4,69 @@
   <title>Login</title>
 </head>
 <body>
-  <h2>Login</h2>
-  <form id="login" action="{{ url_for('login')}}" method="post">
-    Username :  <input type="text" id="username" name="username" />
-    Password : <input type="password" id="password" name="password" />
-    <input type="submit" id="submit" text="Login" />
-  </form>
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <ul class=flashes>
-      {% for message in messages %}
-        <li>{{ message }}</li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-  {% endwith %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid justify-content-lg-evenly">
+            <a class="navbar-brand" href={{ url_for('index') }}>Anime Image Board</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href={{ url_for('index') }}>Anime List</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Character List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={{ url_for('random') }}>Random Image</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/new/post">Create Post</a>
+                  </li>
+                  </ul>
+                  <form class="d-flex" action={{ url_for('login') }}>
+                    <button class="btn btn-primary" type="submit">Log-In</button>
+                  </form>
+            </div>
+        </div>
+        
+    </nav>
+
+    <br>
+
+    <main>
+
+        <div class="card w-50 mx-auto p-4">
+            <h2 class="card-title">Log-In</h2>
+            <hr>
+            <br>
+            <form method="POST" action="/login">
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <label class="form-label">Username:</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" name="username" class="form-control">
+                </div>
+              </div>
+              <br>
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <label class="form-label">Password:</label>
+                </div>
+                <div class="col-auto">
+                  <input type="password" name="password" class="form-control">
+                </div>
+              </div>
+              <br>
+              <button class="btn btn-primary"> Login </button>
+            </form>
+        </div>
+
+    </main>
+
 </body>
 </html>
