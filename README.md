@@ -10,8 +10,8 @@ GitHub Repo Link: https://github.com/ahernandez1215/anime_board.git
 
 -------------------------
 
-To run the program, open a virtual environment and startup FLASK using
-(Windows)
+For Windows: Start a virtual environment and change directory to anime_board directory.
+Run the following....
 
 $env:FLASK_APP = "index.py"
 
