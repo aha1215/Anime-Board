@@ -12,7 +12,8 @@
 
 -------------------------
 <h2>How to Run</h2>
-Install flask sqlalchemy module while your virtual environment is running: python -m pip install flask-sqlalchemy
+Install flask sqlalchemy module while your virtual environment is running: python -m pip install flask-sqlalchemy<br><br>
+
 
 For Windows: Start a virtual environment using power shell and change directory to anime_board directory.
 Run the following....
