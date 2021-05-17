@@ -10,6 +10,8 @@
 
 <strong>GitHub Repo Link:</strong> https://github.com/ahernandez1215/anime_board.git
 
+<strong>Trello:</strong> https://trello.com/b/VvXgS5bz/cst-205-sp21-team-27
+
 -------------------------
 <h2>How to Run</h2>
 Install flask sqlalchemy module while your virtual environment is running: python -m pip install flask-sqlalchemy<br><br>
