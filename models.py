@@ -1,3 +1,6 @@
+'''
+Code for sending and retrieving user info from the database.
+'''
 import sqlite3 as sql
 
 def insertUser(username,password):
