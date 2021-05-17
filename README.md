@@ -1,6 +1,6 @@
 <h1>Anime Image Board</h1>
 
-Description: An board where users can discuss their favorite anime.
+Description: A board where users can discuss their favorite anime.
 
 Team Members: Andrew Brown, Emma Larson, Scott Coonis, Alfredo Hernandez
 
