@@ -11,8 +11,9 @@
 <strong>GitHub Repo Link:</strong> https://github.com/ahernandez1215/anime_board.git
 
 -------------------------
+1.Install flask sqlalchemy module while your virtual environment is running: python -m pip install flask-sqlalchemy
 
-For Windows: Start a virtual environment and change directory to anime_board directory.
+2.For Windows: Start a virtual environment using power shell and change directory to anime_board directory.
 Run the following....
 
 $env:FLASK_APP = "index.py"
@@ -20,6 +21,8 @@ $env:FLASK_APP = "index.py"
 $env:FLASK_DEBUG = "1"
 
 flask run
+
+3. Then open your browser and go to http://127.0.0.1:5000/
 
 -------------------------
 
