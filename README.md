@@ -1,14 +1,14 @@
 <h1>Anime Image Board</h1>
 
-Description: A board where users can discuss their favorite anime.
+<strong>Description:</strong> A board where users can discuss their favorite anime.
 
-Team Members: Andrew Brown, Emma Larson, Scott Coonis, Alfredo Hernandez
+<strong>Team Members:</strong> Andrew Brown, Emma Larson, Scott Coonis, Alfredo Hernandez
 
-CLASS: CST 205 Multimedia Design and Programming
+<strong>Class:</strong> CST 205 Multimedia Design and Programming
 
-DATE: 5/17/2021
+<strong>Date:</strong> 5/17/2021
 
-GitHub Repo Link: https://github.com/ahernandez1215/anime_board.git
+<strong>GitHub Repo Link:</strong> https://github.com/ahernandez1215/anime_board.git
 
 -------------------------
 
