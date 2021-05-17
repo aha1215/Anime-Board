@@ -4,7 +4,9 @@ Flask app engine for Anime Board project.
 
 '''
 
-from flask import Flask, render_template, request
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Flask, render_template, request, url_for, redirect, flash, \
+session, abort
 from flask_bootstrap import Bootstrap
 from PIL import Image
 import random, requests, json
@@ -22,6 +24,33 @@ TODO on all routes:
         login/logout buttons show correctly.
     
 '''
+
+
+""" read from a SQLite database and return data """
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'configure strong secret key here'
+# the name of the database
+db_name = 'users.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_name
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+# this variable, db, will be used for all SQLAlchemy commands
+db = SQLAlchemy(app)
+# each table in the database needs a class to be created for it
+# db.Model is required - don't change it
+# identify all columns by name and data type
+class User(db.Model):
+    __tablename__ = 'users'
+    userID = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String)
+    password = db.Column(db.String)
+    birthdate = db.Column(db.Integer)
+
+    def __repr__(self):
+        return '' % self.username
+
 
 #Root route
 @app.route('/')
@@ -89,10 +118,39 @@ def create_post_post():
         return render_template('new_post.html')
 
 
-#Login route
-@app.route('/login')
+
+@app.route("/login/", methods=["GET", "POST"])
 def login():
-    return render_template('login.html')
+    if request.method == "POST":
+        username = request.form['username']
+        password = request.form['password']
+
+        if not (username and password):
+            flash("Username or Password cannot be empty.")
+            return redirect(url_for('login'))
+        else:
+            username = username.strip()
+            password = password.strip()
+
+        user = User.query.filter_by(username=username).first()
+
+        if user and (user.password == password):
+            session[username] = True
+            return redirect(url_for("user_home", username=username))
+        else:
+            flash("Invalid username or password.")
+
+    return render_template("login.html")
+
+@app.route("/user/<username>/")
+def user_home(username):
+    """
+    Home page for validated users.
+    """
+    if not session.get(username):
+        abort(401)
+  
+    return render_template("user_home.html", username=username)
 
 #Logout route
 @app.route('/logout')
